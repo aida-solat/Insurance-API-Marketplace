@@ -1,0 +1,19 @@
+meta {
+  name: claim-id
+  type: http
+  seq: 5
+}
+
+get {
+  url: http://0.0.0.0:8000/claim/65c0828c-2934-4da6-bad3-25e37fce1b49
+  body: none
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+docs {
+  GET /claim/{claim_id}
+}

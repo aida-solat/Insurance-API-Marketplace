@@ -1,0 +1,25 @@
+meta {
+  name: policy
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://0.0.0.0:8000/policy/
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "customer_name": "John Doe",
+    "policy_type": "Health",
+    "premium": 100.0,
+    "start_date": "2023-01-01T00:00:00",
+    "end_date": "2024-01-01T00:00:00"
+  }
+}

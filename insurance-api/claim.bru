@@ -1,0 +1,23 @@
+meta {
+  name: claim
+  type: http
+  seq: 4
+}
+
+post {
+  url: http://0.0.0.0:8000/claim/
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "policy_id": "12345",
+    "claim_amount": 500.0,
+    "filed_date": "2023-01-15T00:00:00"
+  }
+}

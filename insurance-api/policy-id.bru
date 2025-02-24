@@ -1,0 +1,19 @@
+meta {
+  name: policy-id
+  type: http
+  seq: 3
+}
+
+get {
+  url: http://0.0.0.0:8000/policy/18d3195c-ee57-46aa-8479-2e07ff5de0ce
+  body: none
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+docs {
+  GET /policy/{policy_id}
+}
