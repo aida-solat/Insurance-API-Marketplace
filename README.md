@@ -9,9 +9,9 @@ Because regulators don't accept _"the model said so."_
 [**Live demo →**](https://insurance.deciwa.com) &nbsp;·&nbsp; [Backend](./back) &nbsp;·&nbsp; [Frontend](./front)
 
 [![CI](https://github.com/aida-solat/Insurance-API-Marketplace/actions/workflows/ci.yml/badge.svg)](https://github.com/aida-solat/Insurance-API-Marketplace/actions/workflows/ci.yml)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./back/LICENCE.md)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
 ![Python](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12-blue)
-![Next.js](https://img.shields.io/badge/Next.js-14-black)
+![Next.js](https://img.shields.io/badge/Next.js-15-black)
 [![Sponsor](https://img.shields.io/badge/Sponsor-ea4aaa?logo=githubsponsors&logoColor=white)](https://github.com/sponsors/aida-solat)
 [![Ko-fi](https://img.shields.io/badge/Ko--fi-Buy%20me%20a%20coffee-ff5e5b?logo=ko-fi&logoColor=white)](https://ko-fi.com/aidasolat)
 
@@ -106,7 +106,7 @@ response. Nothing is hallucinated into existence.
 | -------- | -------------------------------------------------------- |
 | Backend  | Python 3.11 · FastAPI · SQLModel · SSE                   |
 | LLM      | OpenAI · Anthropic · Ollama · deterministic fallback     |
-| Frontend | Next.js 14 · React 18 · Tailwind · Radix · Framer Motion |
+| Frontend | Next.js 15 · React 18 · Tailwind · Radix · Framer Motion |
 | Infra    | Docker · GitHub Actions · Vercel · Render                |
 
 ## Quickstart
@@ -144,7 +144,7 @@ back/                FastAPI service
   tests/             11 tests · heuristic-backed · zero network
   Dockerfile
 
-front/               Next.js 14 dashboard + landing
+ front/               Next.js 15 dashboard + landing
   app/
     page.tsx         marketing landing
     app/             authenticated dashboard (underwrite · claims · decisions · chat)
@@ -174,6 +174,14 @@ build and a Docker build for the backend. Green is green.
 | **Backend · Render**  | Blueprint from `render.yaml`, set LLM + CORS secrets   |
 | **Self-host**         | `docker build back/ && docker run -p 8005:8005 …`      |
 
+## Project health
+
+- [Security policy](./SECURITY.md)
+- [Contributing guide](./CONTRIBUTING.md)
+- [Code of conduct](./CODE_OF_CONDUCT.md)
+- [Roadmap](./ROADMAP.md)
+- [Dependabot config](./.github/dependabot.yml)
+
 ## Support
 
 If Aegis saves you work, consider sponsoring — it keeps the project
@@ -191,7 +199,7 @@ independent and its decision logic explainable and open.
 
 ## License
 
-MIT — see [`back/LICENCE.md`](./back/LICENCE.md).
+MIT — see [`LICENSE`](./LICENSE).
 
 <div align="center">
 

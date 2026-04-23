@@ -118,7 +118,7 @@ PYTHONPATH=. .venv/bin/pytest -q
 
 ## License
 
-MIT.
+MIT — see [`../LICENSE`](../LICENSE).
 
 ---
 
