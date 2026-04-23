@@ -366,14 +366,6 @@ GET /decisions  ─── compliance & dashboards`}</code>
               Dashboard
             </a>
             <a
-              href="http://localhost:8005/docs"
-              target="_blank"
-              rel="noreferrer"
-              className="hover:text-gold-200"
-            >
-              API docs
-            </a>
-            <a
               href="https://github.com/aida-solat/insurance-api-marketplace"
               target="_blank"
               rel="noreferrer"

@@ -8,6 +8,8 @@ decision logging.
 
 Built with [Deciwa]
 
+**Live demo:** [insurance.deciwa.com](https://insurance.deciwa.com)
+
 Monorepo:
 
 - [`back/`](./back) — FastAPI service: policies, claims, LLM agents, SSE chat
