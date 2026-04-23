@@ -6,7 +6,7 @@ import {
   ArrowRight,
   Brain,
   FileCheck,
-  Github,
+  GitBranch as GithubIcon,
   Layers,
   ScrollText,
   ShieldCheck,
@@ -102,7 +102,7 @@ export default function LandingPage() {
               target="_blank"
               rel="noreferrer"
             >
-              <Github className="h-4 w-4" /> Sponsor
+              <GithubIcon className="h-4 w-4" /> Sponsor
             </a>
           </Button>
           <Button asChild size="sm">
@@ -163,7 +163,7 @@ export default function LandingPage() {
               target="_blank"
               rel="noreferrer"
             >
-              <Github className="h-4 w-4" /> Star on GitHub
+              <GithubIcon className="h-4 w-4" /> Star on GitHub
             </a>
           </Button>
         </motion.div>
@@ -339,7 +339,7 @@ GET /decisions  ─── compliance & dashboards`}</code>
               target="_blank"
               rel="noreferrer"
             >
-              <Github className="h-4 w-4" /> Sponsor on GitHub
+              <GithubIcon className="h-4 w-4" /> Sponsor on GitHub
             </a>
           </Button>
         </div>
