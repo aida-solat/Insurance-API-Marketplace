@@ -1,9 +1,12 @@
 # Aegis — Insurance Decision Platform
 
+[![GitHub Sponsors](https://img.shields.io/github/sponsors/aida-solat?label=Sponsors&logo=githubsponsors&color=EA4AAA)](https://github.com/sponsors/aida-solat)
+[![Ko-fi](https://img.shields.io/badge/Ko--fi-support-FF5E5B?logo=ko-fi&logoColor=white)](https://ko-fi.com/aidasolat)
+
 Auditable AI for underwriting and claims triage. Hybrid rules + LLM, with full
 decision logging.
 
-Built with [Deciwa](https://deciwa.com).
+Built with [Deciwa]
 
 Monorepo:
 
@@ -60,4 +63,4 @@ MIT — see [`back/LICENCE.md`](./back/LICENCE.md).
 
 ---
 
-Built with [Deciwa](https://deciwa.com).
+Built with [Deciwa].
