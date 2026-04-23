@@ -1,120 +1,63 @@
-# Insurance API Marketplace
+# Aegis — Insurance Decision Platform
 
-This is a FastAPI-based Insurance API Marketplace that allows users to create and retrieve insurance policies and claims.
+Auditable AI for underwriting and claims triage. Hybrid rules + LLM, with full
+decision logging.
 
-## Features
-- Create and retrieve **Insurance Policies**
-- File and track **Insurance Claims**
-- RESTful API with JSON-based request/response
-- Interactive API documentation via FastAPI's built-in docs
+Built with [Deciwa](https://deciwa.com).
 
-## Installation
+Monorepo:
 
-### Prerequisites
-- Python 3.8+
-- pip
+- [`back/`](./back) — FastAPI service: policies, claims, LLM agents, SSE chat
+- [`front/`](./front) — Next.js 14 dashboard + landing page
 
-### Steps
+## Run locally
+
 ```bash
-# Clone the repository
-git clone https://github.com/aida-solat/insurance-api-marketplace.git
-cd insurance-api-marketplace
+# Backend (port 8005)
+cd back
+python3 -m venv .venv
+.venv/bin/pip install -r requirements.txt
+cp .env.example .env           # optional: set an LLM key
+.venv/bin/uvicorn app.main:app --reload --port 8005
 
-# Install dependencies
-pip install -r requirements.txt
-
-# Run the API server
-uvicorn main:app --host 0.0.0.0 --port 8000 --reload
-```
-
-## API Endpoints
-
-### Policies
-#### Create Policy
-```
-POST /policy/
-```
-**Request Body:**
-```json
-{
-  "customer_name": "John Doe",
-  "policy_type": "Health",
-  "premium": 250.0,
-  "start_date": "2024-02-24T00:00:00",
-  "end_date": "2025-02-24T00:00:00"
-}
-```
-**Response:**
-```json
-{
-  "id": "uuid-generated",
-  "customer_name": "John Doe",
-  "policy_type": "Health",
-  "premium": 250.0,
-  "start_date": "2024-02-24T00:00:00",
-  "end_date": "2025-02-24T00:00:00"
-}
+# Frontend (port 3005)
+cd ../front
+npm install
+npm run dev
 ```
 
-#### Get Policy by ID
-```
-GET /policy/{policy_id}
-```
-**Response:**
-```json
-{
-  "id": "uuid-generated",
-  "customer_name": "John Doe",
-  "policy_type": "Health",
-  "premium": 250.0,
-  "start_date": "2024-02-24T00:00:00",
-  "end_date": "2025-02-24T00:00:00"
-}
+- Landing: http://localhost:3005
+- Dashboard: http://localhost:3005/app
+- API docs: http://localhost:8005/docs
+
+## LLM providers
+
+Set one in `back/.env` and the resolver picks it automatically:
+
+- `OPENAI_API_KEY` (default model: `gpt-4o-mini`)
+- `ANTHROPIC_API_KEY` (default: `claude-3-5-haiku-latest`)
+- `OLLAMA_BASE_URL` (default model: `llama3.2`)
+
+Without any key the platform runs a deterministic heuristic provider.
+
+## Tests
+
+```bash
+cd back
+PYTHONPATH=. .venv/bin/pytest -q
 ```
 
-### Claims
-#### File a Claim
-```
-POST /claim/
-```
-**Request Body:**
-```json
-{
-  "policy_id": "uuid-generated",
-  "claim_amount": 500.0,
-  "filed_date": "2024-02-24T00:00:00"
-}
-```
-**Response:**
-```json
-{
-  "id": "uuid-generated",
-  "policy_id": "uuid-generated",
-  "claim_amount": 500.0,
-  "status": "Pending",
-  "filed_date": "2024-02-24T00:00:00"
-}
-```
+## Deploy
 
-#### Get Claim by ID
-```
-GET /claim/{claim_id}
-```
-**Response:**
-```json
-{
-  "id": "uuid-generated",
-  "policy_id": "uuid-generated",
-  "claim_amount": 500.0,
-  "status": "Pending",
-  "filed_date": "2024-02-24T00:00:00"
-}
-```
-
-## API Documentation
-Access interactive API documentation at:
-- Swagger UI: [http://localhost:8000/docs](http://localhost:8000/docs)
-- ReDoc: [http://localhost:8000/redoc](http://localhost:8000/redoc)
+- **Backend** — `back/Dockerfile` is production-ready. Works on Fly.io,
+  Railway, Render, or any container host. Set env vars through the platform.
+- **Frontend** — deploys to Vercel as-is. Set `NEXT_PUBLIC_API_URL` to the
+  backend URL.
 
 ## License
-MIT License
+
+MIT — see [`back/LICENCE.md`](./back/LICENCE.md).
+
+---
+
+Built with [Deciwa](https://deciwa.com).

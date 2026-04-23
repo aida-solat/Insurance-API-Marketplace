@@ -1,0 +1,38 @@
+# ---- OS / editors -----------------------------------------------------------
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# ---- Secrets ----------------------------------------------------------------
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# ---- Python -----------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+htmlcov/
+.coverage
+*.log
+
+# ---- Databases --------------------------------------------------------------
+*.db
+*.sqlite
+*.sqlite3
+
+# ---- Node / Next ------------------------------------------------------------
+node_modules/
+.next/
+out/
+dist/
+.vercel/
+*.tsbuildinfo
+next-env.d.ts

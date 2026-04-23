@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  background: #04100b;
+  color: #e8efe9;
+  min-height: 100%;
+}
+
+body {
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui;
+  font-feature-settings: "ss01", "cv11";
+  background-image:
+    radial-gradient(
+      1200px 600px at 10% -10%,
+      rgba(212, 175, 55, 0.08),
+      transparent 60%
+    ),
+    radial-gradient(
+      900px 500px at 110% 10%,
+      rgba(28, 122, 88, 0.18),
+      transparent 60%
+    ),
+    linear-gradient(180deg, #04100b 0%, #06170f 100%);
+  background-attachment: fixed;
+}
+
+/* Subtle scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(212, 175, 55, 0.18);
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(212, 175, 55, 0.32);
+}
+
+@layer utilities {
+  .text-gradient-gold {
+    background: linear-gradient(90deg, #f4e4b1 0%, #d4af37 50%, #e2c564 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .glass {
+    background: rgba(10, 34, 24, 0.55);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(212, 175, 55, 0.15);
+  }
+  .hairline {
+    border: 1px solid rgba(212, 175, 55, 0.18);
+  }
+}

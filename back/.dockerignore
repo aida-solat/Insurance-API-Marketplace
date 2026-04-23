@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.env
+.env.local
+*.log
+*.db
+*.sqlite
+tests/
+insurance-api/
+README.md
+.git/
+.gitignore
