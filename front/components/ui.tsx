@@ -25,8 +25,7 @@ const buttonVariants = cva(
           "bg-forest-800/70 text-gold-200 border border-gold-500/20 hover:border-gold-500/50 hover:bg-forest-700/70",
         ghost: "text-gold-200 hover:bg-forest-800/60 hover:text-gold-100",
         outline: "border border-gold-500/40 text-gold-200 hover:bg-gold-500/10",
-        destructive:
-          "bg-red-900/60 text-red-100 border border-red-500/40 hover:bg-red-900/80",
+        destructive: "bg-red-600 text-white hover:bg-red-700 shadow-sm",
       },
       size: {
         sm: "h-8 px-3 text-xs",
@@ -166,11 +165,11 @@ const badgeVariants = cva(
   {
     variants: {
       tone: {
-        gold: "bg-gold-500/15 text-gold-300 border border-gold-500/30",
-        green: "bg-forest-500/20 text-forest-300 border border-forest-500/30",
-        red: "bg-red-900/30 text-red-300 border border-red-500/30",
-        amber: "bg-amber-900/30 text-amber-300 border border-amber-500/30",
-        neutral: "bg-forest-800 text-forest-300/80 border border-white/5",
+        gold: "bg-blue-50 text-[#0B2545] border border-blue-200",
+        green: "bg-emerald-50 text-emerald-800 border border-emerald-200",
+        red: "bg-red-50 text-red-800 border border-red-200",
+        amber: "bg-amber-50 text-amber-900 border border-amber-200",
+        neutral: "bg-slate-100 text-slate-700 border border-slate-200",
       },
     },
     defaultVariants: { tone: "neutral" },
