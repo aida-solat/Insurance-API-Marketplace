@@ -4,7 +4,7 @@
 
 **An auditable, rules-first AI platform for insurance underwriting and claims.**
 
-Because regulators don't accept _"the model said so."_
+Built for regulated environments where every decision needs to be explainable.
 
 [**Live demo →**](https://insurance.deciwa.com) &nbsp;·&nbsp; [Backend](./back) &nbsp;·&nbsp; [Frontend](./front)
 
@@ -19,24 +19,22 @@ Because regulators don't accept _"the model said so."_
 
 ---
 
-## The problem
+## Overview
 
-Most "AI for insurance" demos wrap a single LLM call and call it a day. That
-works in a pitch deck. It does not work in a regulated market where every
-decision must be explainable, reproducible, and defensible five years after
-the fact.
-
-Aegis is built the other way around.
+Many "AI for insurance" demos wrap a single LLM call. That is hard to defend
+in a regulated market where decisions must be explainable, reproducible, and
+auditable years after the fact. Aegis takes a different approach:
 
 1. A **deterministic rule engine** computes a risk or fraud score from
    structured inputs, producing an ordered list of factors with their weights.
-2. That structured assessment is handed to an **LLM as grounded context**, not
-   as open-ended prose. The model's only job is to pick an outcome and
-   summarise the rationale.
-3. Every decision — inputs, factors, model, confidence, rationale — is written
-   to an **append-only audit log** (`GET /decisions`).
+2. That structured assessment is passed to an **LLM as grounded context**. The
+   model picks an outcome and summarises the rationale; it does not invent
+   facts.
+3. Every decision (inputs, factors, model, confidence, rationale) is written
+   to an **append-only audit log** exposed at `GET /decisions`.
 
-Swap the LLM, compare models, or disable it entirely — the rules still decide.
+The LLM is swappable, and the rule engine works on its own if no provider is
+configured.
 
 ## Architecture
 
@@ -97,8 +95,7 @@ curl -X POST https://insurance.deciwa.com/api/decide/underwrite \
 }
 ```
 
-Every field is directly traceable back to either the rule engine or the LLM
-response. Nothing is hallucinated into existence.
+Every field is traceable back to either the rule engine or the LLM response.
 
 ## Stack
 
@@ -115,19 +112,19 @@ response. Nothing is hallucinated into existence.
 git clone https://github.com/aida-solat/Insurance-API-Marketplace.git
 cd Insurance-API-Marketplace
 
-# Backend — port 8005
+# Backend (port 8005)
 cd back
 python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
 .venv/bin/uvicorn app.main:app --reload --port 8005
 
-# Frontend — port 3005
+# Frontend (port 3005)
 cd ../front
 npm install && npm run dev
 ```
 
-Open [`localhost:3005`](http://localhost:3005). No API key required — the
-heuristic provider makes the full surface usable offline. Drop an
-`OPENAI_API_KEY` in `back/.env` to upgrade the reasoning layer.
+Open [`localhost:3005`](http://localhost:3005). No API key required: the
+heuristic provider makes the full surface usable offline. Add an
+`OPENAI_API_KEY` to `back/.env` to enable a real LLM.
 
 ## Layout
 
@@ -164,7 +161,7 @@ PYTHONPATH=. .venv/bin/pytest -q
 ```
 
 CI runs the suite on Python 3.10, 3.11, and 3.12, plus a production Next.js
-build and a Docker build for the backend. Green is green.
+build and a Docker build for the backend.
 
 ## Deploy
 
@@ -184,8 +181,8 @@ build and a Docker build for the backend. Green is green.
 
 ## Support
 
-If Aegis saves you work, consider sponsoring — it keeps the project
-independent and its decision logic explainable and open.
+If this project is useful to you, consider sponsoring. It helps keep the
+project maintained and open-source.
 
 <p align="center">
   <a href="https://github.com/sponsors/aida-solat">
@@ -199,7 +196,7 @@ independent and its decision logic explainable and open.
 
 ## License
 
-MIT — see [`LICENSE`](./LICENSE).
+MIT. See [`LICENSE`](./LICENSE).
 
 <div align="center">
 
