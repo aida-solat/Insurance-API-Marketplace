@@ -5,28 +5,25 @@ engine for underwriting and claim triage, and a Server-Sent Events chat
 endpoint. Runs fully offline on a deterministic heuristic provider; drop in
 OpenAI, Anthropic, or Ollama to upgrade the reasoning layer.
 
-## Philosophy
-
-Rules decide. The LLM narrates.
+## Architecture
 
 - **`app/rules/`** computes a numeric score and an ordered list of factors.
   Deterministic, side-effect free, unit-tested.
-- **`app/agents/`** hands that structured block to an LLM as grounded
-  context. The model picks an outcome and summarises the rationale — nothing
-  more.
+- **`app/agents/`** passes that structured block to an LLM as grounded
+  context. The model picks an outcome and summarises the rationale; it does
+  not invent facts.
 - **`app/models.py::Decision`** is append-only. Every call to
   `/decide/underwrite` or `/decide/claim/{id}` writes input, factors, model,
-  confidence, and rationale. `GET /decisions` is your audit log.
+  confidence, and rationale. `GET /decisions` exposes the audit log.
 
-Swap providers, compare models, or disable the LLM entirely — the decision
-surface still works.
+Providers are swappable, and the API works end-to-end with the LLM disabled.
 
 ## Run
 
 ```bash
 python3 -m venv .venv
 .venv/bin/pip install -r requirements.txt
-cp .env.example .env           # optional — zero-config works too
+cp .env.example .env           # optional, zero-config also works
 .venv/bin/uvicorn app.main:app --reload --port 8005
 ```
 
@@ -36,11 +33,11 @@ Swagger UI: http://localhost:8005/docs
 
 Set one of these in `.env` and the resolver auto-selects it:
 
-| Variable              | Default model                 |
-| --------------------- | ----------------------------- |
-| `OPENAI_API_KEY`      | `gpt-4o-mini`                 |
-| `ANTHROPIC_API_KEY`   | `claude-3-5-haiku-latest`     |
-| `OLLAMA_BASE_URL`     | `llama3.2`                    |
+| Variable            | Default model             |
+| ------------------- | ------------------------- |
+| `OPENAI_API_KEY`    | `gpt-4o-mini`             |
+| `ANTHROPIC_API_KEY` | `claude-3-5-haiku-latest` |
+| `OLLAMA_BASE_URL`   | `llama3.2`                |
 
 With none set, the built-in heuristic provider reads the structured rule
 output and returns a deterministic decision. Every endpoint works offline.
@@ -79,10 +76,10 @@ Response:
 
 ```json
 {
-  "decision":          "REJECT",
-  "confidence":        0.72,
-  "risk_score":        77.0,
-  "suggested_premium": 124.10,
+  "decision": "REJECT",
+  "confidence": 0.72,
+  "risk_score": 77.0,
+  "suggested_premium": 124.1,
   "reasoning": [
     "Base rate for 'auto': 0.060",
     "Policy type 'auto' classified as elevated risk (+10)",
@@ -118,7 +115,7 @@ PYTHONPATH=. .venv/bin/pytest -q
 
 ## License
 
-MIT — see [`../LICENSE`](../LICENSE).
+MIT. See [`../LICENSE`](../LICENSE).
 
 ---
 

@@ -20,12 +20,12 @@ const FEATURES = [
   {
     icon: ShieldCheck,
     title: "Grounded Decisions",
-    body: "Every AI call starts from deterministic risk & fraud rules, so the LLM decides on top of facts — not hallucinations.",
+    body: "Every AI call is anchored in deterministic risk and fraud rules, so the LLM works from structured facts rather than free-form prompts.",
   },
   {
     icon: ScrollText,
     title: "Auditable by Design",
-    body: "Every decision is persisted with inputs, reasoning, model, and confidence. Regulators love it.",
+    body: "Every decision is persisted with inputs, reasoning, model, and confidence, so the full trail is reviewable later.",
   },
   {
     icon: Layers,
@@ -40,7 +40,7 @@ const FEATURES = [
   {
     icon: Sparkles,
     title: "Claim Fraud Triage",
-    body: "Fraud score, leverage analysis, out-of-window detection — and a FLAG / REJECT / APPROVE decision you can stand behind.",
+    body: "Fraud score, leverage analysis, and out-of-window detection feed into a FLAG / REJECT / APPROVE outcome with a documented rationale.",
   },
   {
     icon: Brain,
@@ -280,8 +280,8 @@ export default function LandingPage() {
                 A deterministic risk engine computes the numbers and produces
                 structured factors. That block is then passed to the LLM as
                 grounded context. The model&apos;s only job is to pick a
-                decision and summarize the rationale — which is then stored in
-                an append-only audit log.
+                decision and summarize the rationale, which is then stored in an
+                append-only audit log.
               </p>
               <div className="mt-6 flex gap-3">
                 <Button asChild>
@@ -320,8 +320,8 @@ GET /decisions  ─── compliance & dashboards`}</code>
 
       <section className="relative z-10 mx-auto max-w-5xl px-6 pb-32 text-center">
         <h2 className="font-display text-4xl md:text-5xl">
-          Ship AI decisions your lawyers will{" "}
-          <span className="text-gradient-gold">sign off on</span>.
+          AI decisions with a{" "}
+          <span className="text-gradient-gold">paper trail</span>.
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-forest-300/90">
           Open the dashboard, file a claim, and watch the underwriter agent
