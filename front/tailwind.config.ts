@@ -5,24 +5,27 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Dark green scale
+        // Neutral / surface scale (slate). Names kept for backwards-compat
+        // with existing class strings; values flipped for an enterprise
+        // light theme (white surfaces, slate text).
         forest: {
-          950: "#04100B",
-          900: "#06170F",
-          800: "#0A2218",
-          700: "#0F3123",
-          600: "#14543E",
-          500: "#1C7A58",
-          400: "#2FA077",
-          300: "#5EC49B",
+          950: "#FFFFFF", // used as button text on navy (white)
+          900: "#F8FAFC", // page background
+          800: "#F1F5F9", // panel / hover
+          700: "#E2E8F0", // border
+          600: "#CBD5E1",
+          500: "#94A3B8",
+          400: "#64748B",
+          300: "#475569", // muted body text
         },
-        // Gold accent
+        // Brand accent scale (deep navy — institutional / NA insurance).
+        // Names kept for backwards-compat ("gold-*" now reads as navy).
         gold: {
-          500: "#D4AF37",
-          400: "#E2C564",
-          300: "#EED898",
-          200: "#F4E4B1",
-          100: "#F9EFCE",
+          500: "#0B2545", // primary navy
+          400: "#13315C",
+          300: "#1E4D8C",
+          200: "#0F172A", // headings (near-black)
+          100: "#0B2545",
         },
       },
       fontFamily: {
@@ -40,15 +43,15 @@ const config: Config = {
         tightest: "-0.035em",
       },
       boxShadow: {
-        gold: "0 0 0 1px rgba(212,175,55,0.3), 0 10px 40px -10px rgba(212,175,55,0.25)",
+        gold: "0 1px 2px rgba(15,23,42,0.06), 0 4px 16px -6px rgba(11,37,69,0.18)",
         "gold-lg":
-          "0 0 0 1px rgba(212,175,55,0.35), 0 20px 60px -15px rgba(212,175,55,0.35)",
+          "0 4px 12px rgba(15,23,42,0.08), 0 20px 48px -16px rgba(11,37,69,0.25)",
       },
       backgroundImage: {
         "grid-forest":
-          "linear-gradient(rgba(212,175,55,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(212,175,55,0.06) 1px, transparent 1px)",
+          "linear-gradient(rgba(15,23,42,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(15,23,42,0.05) 1px, transparent 1px)",
         "radial-gold":
-          "radial-gradient(circle at 50% 0%, rgba(212,175,55,0.18), transparent 60%)",
+          "radial-gradient(circle at 50% 0%, rgba(11,37,69,0.08), transparent 65%)",
       },
     },
   },

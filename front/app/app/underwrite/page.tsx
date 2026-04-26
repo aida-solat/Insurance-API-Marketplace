@@ -194,7 +194,7 @@ export default function UnderwritePage() {
             </Field>
 
             {error && (
-              <p className="rounded-lg border border-red-500/40 bg-red-900/20 p-3 text-sm text-red-300">
+              <p className="rounded-lg border border-red-200 bg-red-50 p-3 text-sm text-red-700">
                 {error}
               </p>
             )}

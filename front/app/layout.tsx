@@ -4,16 +4,16 @@ import { GeistMono } from "geist/font/mono";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Aegis: AI Insurance Decision Platform",
+  title: "Aegis — Enterprise Insurance Decision Platform",
   description:
-    "Auditable, explainable AI for underwriting and claims triage. Hybrid rules + LLM. Runs offline out-of-the-box.",
+    "Audit-grade AI for underwriting and claims operations. Deterministic rules, explainable LLM rationale, and an immutable decision log built for North American carriers.",
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_SITE_URL || "https://insurance.deciwa.com",
   ),
   openGraph: {
-    title: "Aegis: AI Insurance Decision Platform",
+    title: "Aegis — Enterprise Insurance Decision Platform",
     description:
-      "Auditable, explainable AI for underwriting and claims triage.",
+      "Audit-grade AI for underwriting and claims operations, built for North American carriers.",
     type: "website",
   },
 };
