@@ -105,7 +105,7 @@ function TriageTab() {
   return (
     <div className="space-y-3">
       {error && (
-        <p className="rounded-lg border border-red-500/40 bg-red-900/20 p-3 text-sm text-red-300">
+        <p className="rounded-lg border border-red-200 bg-red-50 p-3 text-sm text-red-700">
           {error}
         </p>
       )}
@@ -267,7 +267,7 @@ function FileTab() {
             {policies.loading ? (
               <p className="text-sm text-forest-300/70">Loading policies…</p>
             ) : !policies.data?.length ? (
-              <p className="rounded-lg border border-amber-500/30 bg-amber-900/20 p-3 text-sm text-amber-200">
+              <p className="rounded-lg border border-amber-200 bg-amber-50 p-3 text-sm text-amber-800">
                 No policies exist yet. Go to{" "}
                 <a
                   href="/app/underwrite"
@@ -354,7 +354,7 @@ function FileTab() {
           </div>
 
           {error && (
-            <p className="rounded-lg border border-red-500/40 bg-red-900/20 p-3 text-sm text-red-300">
+            <p className="rounded-lg border border-red-200 bg-red-50 p-3 text-sm text-red-700">
               {error}
             </p>
           )}

@@ -23,7 +23,7 @@ const ITEMS = [
 export function Sidebar() {
   const pathname = usePathname();
   return (
-    <aside className="sticky top-0 hidden h-screen w-64 shrink-0 flex-col border-r border-gold-500/10 bg-forest-950/60 p-5 md:flex">
+    <aside className="sticky top-0 hidden h-screen w-64 shrink-0 flex-col border-r border-slate-200 bg-white p-5 md:flex">
       <Link href="/" className="mb-8">
         <Logo />
       </Link>
@@ -39,8 +39,8 @@ export function Sidebar() {
               className={cn(
                 "group flex items-center gap-3 rounded-lg px-3 py-2 text-sm transition-colors",
                 active
-                  ? "bg-gold-500/15 text-gold-200 shadow-[inset_0_0_0_1px_rgba(212,175,55,0.3)]"
-                  : "text-forest-300/80 hover:bg-forest-800/50 hover:text-gold-200",
+                  ? "bg-blue-50 text-[#0B2545] shadow-[inset_0_0_0_1px_rgba(11,37,69,0.15)]"
+                  : "text-slate-600 hover:bg-slate-100 hover:text-[#0B2545]",
               )}
             >
               <item.icon
