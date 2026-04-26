@@ -97,16 +97,6 @@ export default function LandingPage() {
             </a>
           </nav>
           <div className="flex items-center gap-2">
-            <Button
-              asChild
-              variant="ghost"
-              size="sm"
-              className="hidden sm:inline-flex"
-            >
-              <a href="mailto:hello@deciwa.com?subject=Aegis%20demo%20request">
-                Request a demo
-              </a>
-            </Button>
             <Button asChild size="sm">
               <Link href="/app">
                 Open dashboard <ArrowRight className="h-4 w-4" />
@@ -162,8 +152,12 @@ export default function LandingPage() {
             </Link>
           </Button>
           <Button asChild size="lg" variant="outline">
-            <a href="mailto:hello@deciwa.com?subject=Aegis%20enterprise%20inquiry">
-              Talk to the team
+            <a
+              href="https://github.com/aida-solat/Insurance-API-Marketplace"
+              target="_blank"
+              rel="noreferrer"
+            >
+              View on GitHub
             </a>
           </Button>
         </motion.div>
@@ -413,8 +407,12 @@ GET /decisions  ─── compliance & dashboards`}</code>
             </Link>
           </Button>
           <Button asChild size="lg" variant="outline">
-            <a href="mailto:hello@deciwa.com?subject=Aegis%20enterprise%20inquiry">
-              Contact sales
+            <a
+              href="https://github.com/aida-solat/Insurance-API-Marketplace"
+              target="_blank"
+              rel="noreferrer"
+            >
+              View on GitHub
             </a>
           </Button>
         </div>
@@ -447,12 +445,6 @@ GET /decisions  ─── compliance & dashboards`}</code>
               className="hover:text-[#0B2545]"
             >
               GitHub
-            </a>
-            <a
-              href="mailto:hello@deciwa.com?subject=Aegis%20enterprise%20inquiry"
-              className="hover:text-[#0B2545]"
-            >
-              Contact
             </a>
           </div>
         </div>
