@@ -15,13 +15,13 @@ import {
 
 export default function DecisionsPage() {
   const [filter, setFilter] = useState<"all" | "underwrite" | "claim_triage">(
-    "all"
+    "all",
   );
   const decisions = useSWRLike(["decisions", filter], () =>
     api.listDecisions({
       kind: filter === "all" ? undefined : filter,
       limit: 100,
-    })
+    }),
   );
 
   return (
@@ -34,7 +34,8 @@ export default function DecisionsPage() {
           All decisions
         </h1>
         <p className="mt-1 text-sm text-forest-300/80">
-          Every AI decision — input, reasoning, model, and score — immutable and queryable.
+          Every AI decision (input, reasoning, model, and score), immutable and
+          queryable.
         </p>
       </header>
 
@@ -65,7 +66,9 @@ export default function DecisionsPage() {
       {decisions.data && decisions.data.length === 0 && (
         <Card>
           <CardTitle>No decisions yet</CardTitle>
-          <CardDescription>Run an underwriting or claim triage to populate this log.</CardDescription>
+          <CardDescription>
+            Run an underwriting or claim triage to populate this log.
+          </CardDescription>
         </Card>
       )}
       {decisions.data && decisions.data.length > 0 && (

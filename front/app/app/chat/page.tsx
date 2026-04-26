@@ -22,7 +22,7 @@ export default function ChatPage() {
     {
       role: "assistant",
       content:
-        "Hi — I'm the Aegis copilot. Ask me about any policy, claim, or decision in the system.",
+        "Hi, I'm the Aegis copilot. Ask me about any policy, claim, or decision in the system.",
     },
   ]);
   const [input, setInput] = useState("");

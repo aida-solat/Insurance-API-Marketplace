@@ -17,6 +17,7 @@ import { Logo } from "@/components/logo";
 const FEATURES = [
   {
     icon: ShieldCheck,
+<<<<<<< HEAD
     title: "Deterministic Risk Engine",
     body: "Actuarial-style rules compute risk and fraud factors before any AI call. The model decides on top of facts, not free-form text.",
   },
@@ -24,6 +25,15 @@ const FEATURES = [
     icon: ScrollText,
     title: "Audit-Grade Decision Log",
     body: "Every decision is persisted with inputs, factors, model, version, confidence, and full rationale. Built for state DOI and internal audit reviews.",
+=======
+    title: "Grounded Decisions",
+    body: "Every AI call is anchored in deterministic risk and fraud rules, so the LLM works from structured facts rather than free-form prompts.",
+  },
+  {
+    icon: ScrollText,
+    title: "Auditable by Design",
+    body: "Every decision is persisted with inputs, reasoning, model, and confidence, so the full trail is reviewable later.",
+>>>>>>> 91433c2 (chore: flatten back/front into monorepo)
   },
   {
     icon: Lock,
@@ -37,8 +47,13 @@ const FEATURES = [
   },
   {
     icon: Sparkles,
+<<<<<<< HEAD
     title: "Claims Triage",
     body: "Fraud scoring, out-of-window detection, severity flags, and a clear APPROVE / FLAG / REJECT recommendation for every FNOL.",
+=======
+    title: "Claim Fraud Triage",
+    body: "Fraud score, leverage analysis, and out-of-window detection feed into a FLAG / REJECT / APPROVE outcome with a documented rationale.",
+>>>>>>> 91433c2 (chore: flatten back/front into monorepo)
   },
   {
     icon: Layers,
@@ -286,6 +301,7 @@ export default function LandingPage() {
                 Rules first.{" "}
                 <span className="text-gradient-gold">AI second.</span>
               </h2>
+<<<<<<< HEAD
               <p className="mt-4 text-slate-600">
                 A deterministic risk engine computes scores and produces
                 structured factors using your carrier&apos;s rules. That block
@@ -293,6 +309,14 @@ export default function LandingPage() {
                 model&apos;s only job is to issue a decision and summarize the
                 rationale — which is written to an append-only decision log you
                 control.
+=======
+              <p className="mt-4 text-forest-300/90">
+                A deterministic risk engine computes the numbers and produces
+                structured factors. That block is then passed to the LLM as
+                grounded context. The model&apos;s only job is to pick a
+                decision and summarize the rationale, which is then stored in an
+                append-only audit log.
+>>>>>>> 91433c2 (chore: flatten back/front into monorepo)
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
                 <Button asChild>
@@ -395,11 +419,17 @@ GET /decisions  ─── compliance & dashboards`}</code>
       </section>
 
       <section className="relative z-10 mx-auto max-w-5xl px-6 pb-32 text-center">
+<<<<<<< HEAD
         <h2 className="font-display text-3xl font-semibold tracking-tight text-[#0B2545] md:text-4xl">
           Decisions your underwriters,
           <br />
           <span className="text-gradient-gold">auditors, and counsel</span> can
           defend.
+=======
+        <h2 className="font-display text-4xl md:text-5xl">
+          AI decisions with a{" "}
+          <span className="text-gradient-gold">paper trail</span>.
+>>>>>>> 91433c2 (chore: flatten back/front into monorepo)
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-slate-600">
           Open the dashboard, submit a sample policy, and watch the underwriting
