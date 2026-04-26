@@ -33,7 +33,7 @@ const FEATURES = [
   {
     icon: FileCheck,
     title: "Underwriting Workbench",
-    body: "Risk score, suggested premium, and an explainable rationale on every new policy submission — auto, home, life, or commercial.",
+    body: "Risk score, suggested premium, and an explainable rationale on every new policy submission across auto, home, life, and commercial lines.",
   },
   {
     icon: Sparkles,
@@ -291,7 +291,7 @@ export default function LandingPage() {
                 structured factors using your carrier&apos;s rules. That block
                 is then passed to the language model as grounded context. The
                 model&apos;s only job is to issue a decision and summarize the
-                rationale — which is written to an append-only decision log you
+                rationale, which is written to an append-only decision log you
                 control.
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
@@ -346,7 +346,7 @@ GET /decisions  ─── compliance & dashboards`}</code>
               </h2>
               <p className="mt-4 text-slate-600">
                 Aegis is built around the controls examiners and internal audit
-                teams expect from a North American carrier — not a consumer
+                teams expect from a North American carrier, not a consumer
                 chatbot.
               </p>
             </div>
@@ -374,7 +374,7 @@ GET /decisions  ─── compliance & dashboards`}</code>
                 ],
                 [
                   "Open source core",
-                  "MIT-licensed engine you can audit line by line — no vendor black box.",
+                  "MIT-licensed engine you can audit line by line; no vendor black box.",
                 ],
               ].map(([title, body]) => (
                 <li
