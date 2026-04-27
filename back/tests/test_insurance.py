@@ -1,8 +1,3 @@
-"""Regression tests for the original CRUD surface.
-
-These mirror the pre-refactor tests but run against the new SQLModel-backed
-application via the isolated ``client`` fixture from ``conftest.py``.
-"""
 from __future__ import annotations
 
 

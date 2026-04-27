@@ -1,4 +1,3 @@
-"""Tests for the AI decision endpoints (heuristic provider, fully offline)."""
 from __future__ import annotations
 
 
@@ -69,7 +68,6 @@ def test_claim_triage_flags_high_leverage(client):
     assert data["decision"] in {"FLAG", "REJECT"}
     assert data["fraud_score"] >= 70
 
-    # Claim status is mirrored from the decision.
     got = client.get(f"/claim/{claim['id']}").json()
     assert got["status"] in {"Flagged", "Rejected"}
 
