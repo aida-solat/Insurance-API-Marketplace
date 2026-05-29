@@ -1,6 +1,6 @@
 <div align="center">
 
-# Aegis
+# Aegis — Rules-First AI Platform for Insurance Decisions
 
 **An auditable, rules-first AI platform for insurance underwriting and claims.**
 
